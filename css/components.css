@@ -315,6 +315,10 @@
     max-width: 1100px;
     /* Was: 720px - now matches site content width */
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 /* ============ CONTENT BLOCKS ============ */

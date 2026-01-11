@@ -29,6 +29,7 @@ body {
 
   display: flex;
   align-items: center;
+  /* Ensures vertical centering of all children */
   justify-content: space-between;
   padding: var(--space-4) var(--space-6);
   background-color: var(--base);
@@ -48,6 +49,10 @@ body {
   align-items: center;
   text-decoration: none;
   z-index: 10;
+  line-height: 1;
+  /* Ensures tight vertical alignment */
+  margin: 0;
+  /* Removes any default margin */
 }
 
 .pill-logo img {
