@@ -139,7 +139,8 @@
 
 body {
     font-family: var(--font-serif);
-    font-size: var(--text-base);
+    font-size: var(--text-lg);
+    /* Changed from text-base (16px) to text-lg (18px) for better readability */
     line-height: var(--leading-relaxed);
     color: var(--color-text-primary);
     background-color: var(--color-background);
@@ -183,6 +184,12 @@ h5 {
 
 h6 {
     font-size: var(--text-lg);
+}
+
+/* H3 override for proper hierarchy - ensures H3 (20px) > body text (18px) */
+h3 {
+    font-size: var(--text-xl);
+    /* Override to 20px instead of default 31.25px */
 }
 
 p {

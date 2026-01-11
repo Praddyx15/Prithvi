@@ -45,9 +45,9 @@
 }
 
 .quick-link-card p {
-    font-size: var(--text-base);
     color: var(--color-text-secondary);
     margin-bottom: var(--space-4);
+    /* Removed font-size override - now inherits 18px from design-system.css */
 }
 
 /* ============ CONSULTATION PAGE ============ */
@@ -280,9 +280,9 @@
 }
 
 .contact-method h3 {
-    font-size: var(--text-lg);
     margin-bottom: var(--space-3);
     color: var(--color-brown-dark);
+    /* Removed font-size override - now inherits 20px from design-system.css */
 }
 
 .contact-method a {

@@ -109,15 +109,15 @@
 }
 
 .philosophy-point h3 {
-  font-size: var(--text-lg);
   margin-bottom: var(--space-4);
   color: var(--color-brown-dark);
+  /* Removed font-size override - now inherits 20px from design-system.css */
 }
 
 .philosophy-point p {
-  font-size: var(--text-base);
   color: var(--color-brown-medium);
   line-height: 1.6;
+  /* Removed font-size override - now inherits 18px from design-system.css */
 }
 
 /* ============ CONTENT WITH SIDE GRAPHICS ============ */
