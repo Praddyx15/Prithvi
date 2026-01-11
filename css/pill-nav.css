@@ -1,0 +1,264 @@
+/* ===================================
+   PILL NAVIGATION
+   Modern pill-style navigation with GSAP animations
+   =================================== */
+
+.pill-nav-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Add padding to body to account for sticky nav */
+body {
+  padding-top: 73px;
+  /* Height of pill navigation */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 65px;
+    /* Smaller navigation on mobile */
+  }
+}
+
+.pill-nav {
+  --base: #FAFAF8;
+  --pill-bg: #4A3828;
+  --hover-text: #4A3828;
+  --pill-text: #FAFAF8;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--base);
+  border-bottom: 1px solid var(--color-border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background-color: rgba(250, 250, 248, 0.95);
+}
+
+/* Logo */
+.pill-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.pill-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* Desktop Navigation Items */
+.pill-nav-items {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pill-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.pill-list li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual Pill */
+.pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 80px;
+  text-align: center;
+  will-change: color;
+}
+
+.pill.is-active {
+  background-color: var(--pill-bg);
+  color: var(--pill-text);
+}
+
+/* Hover Circle */
+.hover-circle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  background-color: var(--pill-bg);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Label Stack */
+.label-stack {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  height: 1.2em;
+}
+
+.pill-label,
+.pill-label-hover {
+  display: block;
+  white-space: nowrap;
+}
+
+.pill-label-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--hover-text);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  z-index: 10;
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-brown-dark);
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Mobile Menu Popover */
+.mobile-menu-popover {
+  display: none;
+  position: fixed;
+  top: 73px;
+  left: 0;
+  right: 0;
+  background-color: var(--base);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(61, 40, 23, 0.1);
+  z-index: 99;
+  padding: var(--space-6);
+}
+
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-link:hover {
+  background-color: var(--color-cream);
+  color: var(--color-brown-dark);
+}
+
+.mobile-menu-link.is-active {
+  background-color: var(--pill-bg);
+  color: var(--pill-text);
+}
+
+/* Utility Classes */
+.desktop-only {
+  display: flex !important;
+}
+
+.mobile-only {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: flex !important;
+  }
+
+  .pill-nav {
+    padding: var(--space-4);
+  }
+
+  .pill-logo img {
+    height: 32px;
+  }
+
+  .mobile-menu-popover {
+    top: 65px;
+  }
+}
+
+/* Animations */
+@keyframes menuFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes menuFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

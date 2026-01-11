@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pill Navigation Demo | Psychoanalytically Speaking</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/design-system.css">
+    <link rel="stylesheet" href="css/pill-nav.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: var(--color-background);
+        }
+
+        .demo-content {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: var(--space-12);
+        }
+
+        .demo-content h2 {
+            color: var(--color-brown-dark);
+            margin-bottom: var(--space-6);
+        }
+
+        .demo-content p {
+            color: var(--color-text-secondary);
+            line-height: var(--leading-relaxed);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: var(--space-8) 0;
+        }
+
+        .feature-list li {
+            padding: var(--space-3);
+            margin-bottom: var(--space-2);
+            background: var(--color-cream);
+            border-left: 3px solid var(--color-green-medium);
+        }
+
+        .feature-list li::before {
+            content: "✓ ";
+            color: var(--color-green-dark);
+            font-weight: bold;
+            margin-right: var(--space-2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Pill Navigation -->
+    <div class="pill-nav-container">
+        <nav class="pill-nav" aria-label="Primary" role="navigation">
+            <a class="pill-logo" href="index.html" aria-label="Home">
+                <h1 class="site-title" style="margin: 0; font-size: var(--text-xl);">Psychoanalytically Speaking</h1>
+            </a>
+
+            <div class="pill-nav-items desktop-only">
+                <ul class="pill-list" role="menubar">
+                    <li role="none">
+                        <a role="menuitem" href="index.html" class="pill is-active" aria-label="Home">
+                            <span class="hover-circle" aria-hidden="true"></span>
+                            <span class="label-stack">
+                                <span class="pill-label">Home</span>
+                                <span class="pill-label-hover" aria-hidden="true">Home</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem" href="about.html" class="pill" aria-label="About">
+                            <span class="hover-circle" aria-hidden="true"></span>
+                            <span class="label-stack">
+                                <span class="pill-label">About</span>
+                                <span class="pill-label-hover" aria-hidden="true">About</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem" href="approach.html" class="pill" aria-label="Approach">
+                            <span class="hover-circle" aria-hidden="true"></span>
+                            <span class="label-stack">
+                                <span class="pill-label">Approach</span>
+                                <span class="pill-label-hover" aria-hidden="true">Approach</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem" href="consultation.html" class="pill" aria-label="Consultation">
+                            <span class="hover-circle" aria-hidden="true"></span>
+                            <span class="label-stack">
+                                <span class="pill-label">Consultation</span>
+                                <span class="pill-label-hover" aria-hidden="true">Consultation</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem" href="blogs.html" class="pill" aria-label="Blogs">
+                            <span class="hover-circle" aria-hidden="true"></span>
+                            <span class="label-stack">
+                                <span class="pill-label">Blogs</span>
+                                <span class="pill-label-hover" aria-hidden="true">Blogs</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem" href="readings.html" class="pill" aria-label="Readings">
+                            <span class="hover-circle" aria-hidden="true"></span>
+                            <span class="label-stack">
+                                <span class="pill-label">Readings</span>
+                                <span class="pill-label-hover" aria-hidden="true">Readings</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem" href="lectures.html" class="pill" aria-label="Lectures">
+                            <span class="hover-circle" aria-hidden="true"></span>
+                            <span class="label-stack">
+                                <span class="pill-label">Lectures</span>
+                                <span class="pill-label-hover" aria-hidden="true">Lectures</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a role="menuitem" href="contact.html" class="pill" aria-label="Contact">
+                            <span class="hover-circle" aria-hidden="true"></span>
+                            <span class="label-stack">
+                                <span class="pill-label">Contact</span>
+                                <span class="pill-label-hover" aria-hidden="true">Contact</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="mobile-menu-button mobile-only" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+
+        <div class="mobile-menu-popover mobile-only">
+            <ul class="mobile-menu-list">
+                <li><a href="index.html" class="mobile-menu-link is-active">Home</a></li>
+                <li><a href="about.html" class="mobile-menu-link">About</a></li>
+                <li><a href="approach.html" class="mobile-menu-link">Approach</a></li>
+                <li><a href="consultation.html" class="mobile-menu-link">Consultation</a></li>
+                <li><a href="blogs.html" class="mobile-menu-link">Blogs</a></li>
+                <li><a href="readings.html" class="mobile-menu-link">Readings</a></li>
+                <li><a href="lectures.html" class="mobile-menu-link">Lectures</a></li>
+                <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Demo Content -->
+    <div class="demo-content">
+        <h2>✨ New Pill Navigation Features</h2>
+
+        <p>
+            Your navigation has been upgraded with a modern, animated pill-style design inspired by ReactBits.
+            This implementation uses vanilla JavaScript and GSAP for smooth, professional animations.
+        </p>
+
+        <ul class="feature-list">
+            <li>Circular hover effect that grows from the bottom of each pill</li>
+            <li>Text slides up on hover with a smooth animation</li>
+            <li>Logo rotates 360° when you hover over it</li>
+            <li>Mobile-responsive hamburger menu with slide-down animation</li>
+            <li>Fully accessible with proper ARIA labels and keyboard navigation</li>
+            <li>GSAP-powered animations with customizable easing</li>
+            <li>Automatic active state detection based on current page</li>
+            <li>Smooth entrance animation on page load</li>
+        </ul>
+
+        <h2>How to Test</h2>
+        <p><strong>Desktop:</strong> Hover over each navigation pill to see the circular expansion effect and text
+            animation.</p>
+        <p><strong>Mobile:</strong> Resize your browser to &lt;768px or use responsive mode to see the hamburger menu.
+        </p>
+        <p><strong>Logo:</strong> Hover over "Psychoanalytically Speaking" to see the rotation animation.</p>
+
+        <h2>Customization</h2>
+        <p>
+            The pill navigation colors are configured to match your existing design system:
+        </p>
+        <ul class="feature-list">
+            <li>Base Background: #FAFAF8 (Off-white)</li>
+            <li>Pill Background: #4A3828 (Brown-dark)</li>
+            <li>Pill Text: #FAFAF8 (Off-white)</li>
+            <li>Hover Text: #FAFAF8 (Off-white)</li>
+        </ul>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/pill-nav.js"></script>
+</body>
+
+</html>
