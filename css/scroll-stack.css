@@ -7,28 +7,28 @@
 .scroll-stack-container {
     position: relative;
     width: 100%;
-    padding: var(--space-8) 0;
+    padding: var(--space-4) 0;
 }
 
 .scroll-stack-inner {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 /* Individual cards */
 .scroll-stack-card {
-    position: relative;
+    position: sticky;
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: var(--space-8);
     box-shadow: var(--shadow-md);
-    transition: box-shadow 0.3s ease;
+    margin-bottom: var(--space-8);
+    transform-origin: top center;
     will-change: transform, filter;
     backface-visibility: hidden;
-}
-
-.scroll-stack-card:hover {
-    box-shadow: var(--shadow-lg);
 }
 
 /* Card header/meta */
@@ -64,6 +64,7 @@
     letter-spacing: 0.05em;
     border-bottom: 1px solid transparent;
     transition: all var(--transition-base);
+    text-decoration: none;
 }
 
 .scroll-stack-card .card-link:hover {
@@ -71,19 +72,10 @@
     border-bottom-color: var(--color-green-medium);
 }
 
-/* End spacer for proper pinning release */
+/* End spacer for proper stacking release */
 .scroll-stack-end {
-    height: 50vh;
+    height: 30vh;
     pointer-events: none;
-}
-
-/* Alternate card styling for visual variety */
-.scroll-stack-card:nth-child(odd) {
-    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-cream) 100%);
-}
-
-.scroll-stack-card:nth-child(even) {
-    background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-surface) 100%);
 }
 
 /* Border accent based on position */
@@ -107,6 +99,15 @@
     border-left: 4px solid var(--color-green-dark);
 }
 
+/* Alternating subtle backgrounds */
+.scroll-stack-card:nth-child(odd) {
+    background: linear-gradient(135deg, var(--color-surface) 0%, rgba(250, 250, 248, 0.95) 100%);
+}
+
+.scroll-stack-card:nth-child(even) {
+    background: linear-gradient(135deg, rgba(250, 250, 248, 0.95) 0%, var(--color-surface) 100%);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .scroll-stack-card {
@@ -118,15 +119,6 @@
     }
 
     .scroll-stack-end {
-        height: 30vh;
+        height: 20vh;
     }
-}
-
-/* Smooth shadow transition during stacking */
-.scroll-stack-card[style*="scale(0.9"] {
-    box-shadow: 0 4px 20px rgba(61, 40, 23, 0.15);
-}
-
-.scroll-stack-card[style*="scale(0.8"] {
-    box-shadow: 0 2px 10px rgba(61, 40, 23, 0.1);
 }
