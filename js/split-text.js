@@ -33,7 +33,8 @@ class SplitText {
     }
 
     split() {
-        const text = this.originalText.trim();  // Trim whitespace to prevent alignment issues
+        // Remove all line breaks and normalize whitespace to prevent \r\n from displaying
+        const text = this.originalText.replace(/[\r\n]+/g, ' ').replace(/\s+/g, ' ').trim();
         this.element.innerHTML = '';
         this.element.style.overflow = 'hidden';
         this.element.style.display = 'inline-block';
