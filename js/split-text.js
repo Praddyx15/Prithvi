@@ -33,7 +33,7 @@ class SplitText {
     }
 
     split() {
-        const text = this.originalText;
+        const text = this.originalText.trim();  // Trim whitespace to prevent alignment issues
         this.element.innerHTML = '';
         this.element.style.overflow = 'hidden';
         this.element.style.display = 'inline-block';
