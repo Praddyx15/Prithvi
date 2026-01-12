@@ -299,8 +299,8 @@
 
 .hero-title {
     font-size: var(--text-5xl);
-    margin-bottom: var(--space-8);
-    /* Changed from space-6 (24px) to space-8 (32px) for better spacing */
+    margin-bottom: var(--space-12);
+    /* Changed from space-8 (32px) to space-12 (48px) for much better spacing */
     color: var(--color-brown-darker);
 }
 
